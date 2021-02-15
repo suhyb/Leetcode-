@@ -1,0 +1,30 @@
+// Given an array of integers numbers that is already sorted in ascending order, find two numbers such that they add up to a specific target number.
+
+// Return the indices of the two numbers (1-indexed) as an integer array answer of size 2, where 1 <= answer[0] < answer[1] <= numbers.length.
+
+// You may assume that each input would have exactly one solution and you may not use the same element twice.
+
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        int j = nums.length - 1;
+        for(int i=0; i!=j;){
+            int total = nums[i] + nums[j];
+            if(total==target){
+                i++;
+                j++;
+                int[] index = {i,j};
+                return index;
+            }
+            
+            else if(total > target){
+                j--;
+            }
+            
+            else if(total < target){
+                i++;
+            }
+        }
+        int[] inde ={0,1};
+        return inde;
+    }
+}
